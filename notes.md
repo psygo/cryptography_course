@@ -13,4 +13,6 @@ Crypto Rule #1, **Kerckhoff's Principle**:
 
 > Eve should not be able to break the ciphers even when she knows the cipher. (cipher = algorithm)
 
+Even with all that, Caesar Cipher's key space is too small.
 
+The *substitution cipher* is a predecessor of the caesar cipher, but it has a way bigger key space, since its keys are permutations of the alphabet, not only shifts, that is 26! != 26.
