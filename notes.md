@@ -84,3 +84,17 @@ With [*Linear Congruential Generator* (LCG)][lcg], you can generate random numbe
 [lcg]: https://en.wikipedia.org/wiki/Linear_congruential_generator
 
 The A5/1 uses a Linear Feeback Shift Register (LFSR) to create a stream cipher.
+
+## Block Ciphers - DES
+
+Processing is done on blocks, instead of using a block of the size of the message.
+
+Padding happens when the message is smaller than the size of the block.
+
+The DES algorithm has 56 bits of security, but it could be used in a higher *mode of operation*.
+
+The Russian counterpart to DES, GOST, features 256 bits of security. However it's considered academically broken (not in practical terms).
+
+> Under *ECB* mode, the first 2 blocks of a message under DES will be identical.
+
+> Double-DES can be broken by looking forwards and backwards through ciphered messages. Use triple-DES instead.

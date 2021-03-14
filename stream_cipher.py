@@ -9,7 +9,7 @@ class KeyStream:
         return self.next
 
     def get_key_byte(self):
-        return self.rand() % 256
+        return (self.rand() // 2**31) % 256
 
 
 def encrypt(key, message):
