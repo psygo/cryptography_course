@@ -191,3 +191,25 @@ It sounds like a digital signature, but it isn't.
 1. But, since he can't crack the padded message, he can't find out the key.
 
 > Typically you use asymmetric cryptographic algorithms to exchange keys, but not to communicate, because they are too slow.
+
+# Notes from Computerphile
+
+Videos:
+
+1. [One Encryption Standard to rule them all][aes]
+1. [AES Explained][aes_explained]
+1. [Diffie-Hellman Key Exchange][diffie_hellman]
+1. [Diffie-Hellman Math][diffie_hellman_math]
+1. [Feistel Cipher][feistel]
+
+
+[aes]: https://youtu.be/VYech-c5Dic
+[aes_explained]: https://youtu.be/O4xNJsjtN6E
+[diffie_hellman]: https://youtu.be/NmM9HA2MQGI
+[diffie_hellman_math]: https://youtu.be/Yjrfm_oRO0w
+[feistel]: https://youtu.be/FGhj3CGxl8I
+
+
+Rijndael, which is what's inside AES is everywhere, on YouTube, Bitlocker, etc.
+
+The Feistel cipher uses XOR to encrypt and also decrypt the same thing, even in the case of one-way hash functions.
