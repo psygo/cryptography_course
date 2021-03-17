@@ -119,10 +119,31 @@ Modular calculations can be used for generators:
 
 The priority of the `%` is higher than `+`, so please do use parentheses.
 
-```py
+``
 g = 3
 for i in range(7):
     print(i, (g**i) % 7)
 ``````
 
 The original paper was proposed with modular calculations. However, nowadays, things are done with elliptic curves.
+
+# RSA
+
+> Rivest-Shamir-Adleman, a public-key cryptosystem (1977).
+
+The public key is the lock, and the private key is the lock's key. Everyone can lock the message with the lock, but only the person with the key itself can open it.
+
+Key generation:
+
+- `p`, `q` primes.
+- `n = p * q` modulus
+- `e` exponent
+- `d` modular multiplicative inverse to `e`.
+
+Public key:
+
+- `(n, e)`
+- Public encryption of message `m`.
+- `c = m^e mod n`
+
+
