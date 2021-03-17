@@ -98,3 +98,31 @@ The Russian counterpart to DES, GOST, features 256 bits of security. However it'
 > Under *ECB* mode, the first 2 blocks of a message under DES will be identical.
 
 > Double-DES can be broken by looking forwards and backwards through ciphered messages. Use triple-DES instead.
+
+# Key Exchange
+
+## Diffie-Hellman Key Exchange
+
+> New directions in cryptography (1976)
+
+Modular calculations can be used for generators:
+
+> A generator **g** generates all the non-zero elements in the modulus.
+
+```none
+2^0 mod 5 =  1 = 1 mod 5
+2^1 mod 5 =  2 = 2 mod 5
+2^2 mod 5 =  4 = 4 mod 5
+2^3 mod 5 =  8 = 3 mod 5
+2^4 mod 5 = 16 = 1 mod 5
+```
+
+The priority of the `%` is higher than `+`, so please do use parentheses.
+
+```py
+g = 3
+for i in range(7):
+    print(i, (g**i) % 7)
+``````
+
+The original paper was proposed with modular calculations. However, nowadays, things are done with elliptic curves.
