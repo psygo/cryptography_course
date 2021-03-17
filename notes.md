@@ -146,4 +146,48 @@ Public key:
 - Public encryption of message `m`.
 - `c = m^e mod n`
 
+Secret key:
 
+- `(d)`
+- Secret decryption of message `c`.
+- `m = c^d mod n`
+
+Need that
+
+- `(m^e)^d = m^(e * d) = m^1 = m`
+- Hence `e*d = 1 mod lcm(p-1, q-1)`
+- Hence, if you can compute `p` and `q` from `n`, then you can break RSA.
+
+Integer factorization has been proven to not be NP-complete, so, even if people prove it is actually a P problem, you can really say P = NP.
+
+# Hash Functions
+
+The hash function can take any size of input and any type of input, it doesn't have to be readable text.
+
+Properties:
+
+- It is a one-way deterministic function.
+- The output is dependent on all input bits.
+- Output is uniformly distributed.
+- Impossible (difficult) to make a collision.
+
+Use of hash functions:
+
+- Digital signature
+- Shadow files (passwords)
+- HMAC (Hashed Message Authentication Code)
+- Make deterministic identifiers
+
+RSA can be used to sign messages.
+
+## HMAC
+
+It sounds like a digital signature, but it isn't.
+
+1. Alice generates a key.
+1. Alice pads the message with its key securely somehow
+1. Hashing this padded message leads to Alice's MAC address.
+1. Bob can check, through hashing the padded message, that the result is Alice's MAC address.
+1. But, since he can't crack the padded message, he can't find out the key.
+
+> Typically you use asymmetric cryptographic algorithms to exchange keys, but not to communicate, because they are too slow.
